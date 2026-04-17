@@ -29,10 +29,10 @@ class Flower(Plant):
     def __init__(self, name, height, age, color):
         super().__init__(name, height, age)
         self.color = color
-        self.bloomed = False
+        self.bloomed = True
 
     def bloom(self):
-        self.bloomed = True
+        self.bloomed = False
 
     def show(self):
         super().show()
@@ -49,8 +49,7 @@ class Tree(Plant):
         self.trunk_diameter = trunk_diameter
 
     def produce_shade(self):
-        print(
-            f"Tree {self.name} now produces a shade of {self._height}cm long and {self.trunk_diameter}cm wide.")
+        print(f"Tree {self.name} now produces a shade of {self._height}cm long and {self.trunk_diameter}cm wide.")
 
     def show(self):
         super().show()
@@ -96,6 +95,8 @@ def main():
     for i in range(20):
         tomato.grow()
         tomato.age_up()
+
+    tomato.show()
 
 
 if __name__ == "__main__":
